@@ -1,0 +1,191 @@
+<div class="center">
+
+  <center><%= link_to image_tag("lolbutt.png", alt: "lols"), 'home' %></center>
+
+<HTML> 
+<HEAD> 
+<TITLE>Personality Quiz</TITLE> 
+<script language="javascript"> 
+var Quest = new Array(10);  //this sets up an array for all of the answers that are given 
+
+function populate() { 
+// alert("function populate started"); 
+// this function gives each of the answers 0 points so if someone doesn't answer a question 
+// the whole thing will continue to work 
+  for(var i=0; i<10; i++) { Quest[i]=0; } 
+} 
+
+function total() { 
+// alert("function total started"); 
+// this function adds the number of points each answer is worth together 
+  myScore=0; 
+  for (var i=0; i<10; i++) { myScore=myScore+Quest[i]; } 
+  analyzer(myScore); 
+} 
+
+myContents = new Array(); 
+myContents[0] = "Soraka"; 
+myContents[1] = "NuNu" ;
+myContents[2] = "ChoGath"; 
+myContents[3] = "KogMaw"; 
+myContents[4] = "KhaZix"; 
+myContents[5] = "Malzahar";
+myContents[6] = "home";
+
+function analyzer (myScore) { 
+// this function uses the total calculated score to figure out which personality type they are 
+  if (myScore>55) { myContentsPtr = 0; } 
+  else{ if (myScore>45) {myContentsPtr = 1; }
+    else { if (myScore>35) { myContentsPtr = 2; } 
+      else { if(myScore>25)  { myContentsPtr = 3; }  
+        else { if(myScore>15) { myContentsPtr = 4; } 
+          else { if(myScore>9) { myContentsPtr = 5; } 
+            else { myContentsPtr = 6; } 
+          } 
+        } 
+      } 
+    } 
+  }
+  //myDisplay(myContents[myContentsPtr]) 
+  //window.location.href = "home";
+  window.location.href = myContents[myContentsPtr];
+} 
+
+function myDisplay(myContents) { 
+//This function will open a new window and show the results calculated 
+  alert(myContents); 
+} 
+
+function saver(q, points) { 
+// this function puts the points that each answer is worth into the array 
+  q=q-1; 
+  Quest[q]=points 
+} 
+</script> 
+
+
+<style type="text/css"> 
+
+  .style3 {color: #FFFF99}    
+  .style6 {color: #FFFFFF} 
+
+</style> 
+</HEAD>
+
+<BODY onLoad="populate()"> 
+<FORM NAME="personalityForm"> 
+
+<br>
+
+<span class="style3">1. What is your favorite food?</span><br><br>
+<span class="style6"> 
+<INPUT TYPE="RADIO" NAME="q1" onClick="saver(1,5)">snow cones<br> 
+<INPUT TYPE="RADIO" NAME="q1" onClick="saver(1,6)">fresh grass<br> 
+<INPUT TYPE="RADIO" NAME="q1" onClick="saver(1,2)">fear<br> 
+<INPUT TYPE="RADIO" NAME="q1" onClick="saver(1,4)">flesh<br> 
+<INPUT TYPE="RADIO" NAME="q1" onClick="saver(1,3)">everything<br> 
+<INPUT TYPE="RADIO" NAME="q1" onClick="saver(1,1)">darkness<br> 
+</span>
+<br> <br>
+
+<span class="style3">2. Your friends describe you as</span><br> <br>
+<span class="style6"> 
+<INPUT TYPE="RADIO" NAME="q2" onClick="saver(2,6)" >spiritual<br> 
+<INPUT TYPE="RADIO" NAME="q2" onClick="saver(2,4)">ravenous<br> 
+<INPUT TYPE="RADIO" NAME="q2" onClick="saver(2,2)">stealthy<br> 
+<INPUT TYPE="RADIO" NAME="q2" onClick="saver(2,3)">kind of gross<br> 
+<INPUT TYPE="RADIO" NAME="q2" onClick="saver(2,1)">mysterious<br> 
+<INPUT TYPE="RADIO" NAME="q2" onClick="saver(2,5)">loyal<br> 
+</span><br> <br>
+
+<span class="style3">3.When talking to people you</span><br> <br>
+<span class="style6"> 
+<INPUT TYPE="RADIO" NAME="q3" onClick="saver(3,5)">try to give them your guidance<br> 
+<INPUT TYPE="RADIO" NAME="q3" onClick="saver(3,6)">throw snowballs at them<br> 
+<INPUT TYPE="RADIO" NAME="q3" onClick="saver(3,4)">eat them<br> 
+<INPUT TYPE="RADIO" NAME="q3" onClick="saver(3,2)">taste their fear<br> 
+<INPUT TYPE="RADIO" NAME="q3" onClick="saver(3,1)">open portals to other worlds<br> 
+<INPUT TYPE="RADIO" NAME="q3" onClick="saver(3,3)">eject caustic spittle on them<br> 
+</span><br> <br>
+
+<span class="style3">4. Your greatest wish is to </span><br> <br>
+<span class="style6"> 
+<INPUT TYPE="RADIO" NAME="q4" onClick="saver(4,6)">be amongst the stars<br> 
+<INPUT TYPE="RADIO" NAME="q4" onClick="saver(4,4)">devour all disgusting humans<br> 
+<INPUT TYPE="RADIO" NAME="q4" onClick="saver(4,3)">spit on things and then eat them<br> 
+<INPUT TYPE="RADIO" NAME="q4" onClick="saver(4,2)">hunt down your sworn enemy<br>
+<INPUT TYPE="RADIO" NAME="q4" onClick="saver(4,5)">be together with your best friend<br>
+<INPUT TYPE="RADIO" NAME="q4" onClick="saver(4,1)">fling the world into darkness and chaos<br> 
+</span><br> <br>
+
+<span class="style3">5. When something really amuses you, you react with</span><br><br>
+<span class="style6"> 
+<INPUT TYPE="RADIO" NAME="q5" onClick="saver(5,5)">giving your best friend a high five<br> 
+<INPUT TYPE="RADIO" NAME="q5" onClick="saver(5,6)">blessing it with the power of the stars<br> 
+<INPUT TYPE="RADIO" NAME="q5" onClick="saver(5,4)">devouring it<br> 
+<INPUT TYPE="RADIO" NAME="q5" onClick="saver(5,3)">spitting everywhere<br>
+<INPUT TYPE="RADIO" NAME="q5" onClick="saver(5,2)">leaping around<br>
+<INPUT TYPE="RADIO" NAME="q5" onClick="saver(5,1)">unleashing unspeakable terrors into this world<br>
+</span><br> <br>
+
+<span class="style3">6. When you go to a party or social gathering you</span><br> <br>
+<span class="style6"> 
+<INPUT TYPE="RADIO" NAME="q6" onClick="saver(6,5)">bring your pet along <br> 
+<INPUT TYPE="RADIO" NAME="q6" onClick="saver(6,6)">try to make sure everyone is having a good time<br> 
+<INPUT TYPE="RADIO" NAME="q6" onClick="saver(6,4)">try to kill as many people as you can.<br> 
+<INPUT TYPE="RADIO" NAME="q6" onClick="saver(6,3)">die and explode all over everyone<br> 
+<INPUT TYPE="RADIO" NAME="q6" onClick="saver(6,1)">bring your buddies from the void with you<br> 
+  <INPUT TYPE="RADIO" NAME="q6" onClick="saver(6,2)">hunt everyone down and kill them<br> 
+</span><br> <br>
+
+<span class="style3"><br>7. Your hobbies include</span><br> <br>
+<span class="style6"> 
+<INPUT TYPE="RADIO" NAME="q7" onClick="saver(7,6)">stargazing, guiding your friends, and helping the injured<br> 
+<INPUT TYPE="RADIO" NAME="q7" onClick="saver(7,5)">playing in the snow<br> 
+<INPUT TYPE="RADIO" NAME="q7" onClick="saver(7,4)">inflicting pain and death<br> 
+<INPUT TYPE="RADIO" NAME="q7" onClick="saver(7,2)">evolving your claws and wings and such<br> 
+<INPUT TYPE="RADIO" NAME="q7" onClick="saver(7,1)">summoning monsters from the void<br> 
+<INPUT TYPE="RADIO" NAME="q7" onClick="saver(7,3)">drooling and chasing your tail<br> 
+</span><br> <br>
+
+<span class="style3">8. What is your pet peeve?</span><br> <br>
+<span class="style6"> 
+<INPUT TYPE="RADIO" NAME="q8" onClick="saver(8,4)" >disguting humans<br> 
+<INPUT TYPE="RADIO" NAME="q8" onClick="saver(8,3)" >exploding everywhere when you die <br> 
+<INPUT TYPE="RADIO" NAME="q8" onClick="saver(8,1)" >stoopid noobs like Kassadin<br> 
+<INPUT TYPE="RADIO" NAME="q8" onClick="saver(8,6)" >when people try to kill you and eat your sacred celestial heart<br> 
+<INPUT TYPE="RADIO" NAME="q8" onClick="saver(8,5)" >yeti hunters<br> 
+<INPUT TYPE="RADIO" NAME="q8" onClick="saver(8,2)" >running out of fear to taste<br>  
+</span><br> <br>
+
+<span class="style3">9. When you are in bed at night, in those last few moments before going to sleep, you lie</span><br> <br>
+<span class="style6"> 
+<INPUT TYPE="RADIO" NAME="q9" onClick="saver(9,6)" >stretched out on your back, gazing at the stars<br> 
+<INPUT TYPE="RADIO" NAME="q9" onClick="saver(9,3)" >in your spit and drool<br> 
+<INPUT TYPE="RADIO" NAME="q9" onClick="saver(9,5)" >on top of your pet<br> 
+<INPUT TYPE="RADIO" NAME="q9" onClick="saver(9,2)" >silently in wait, watching your prey<br> 
+<INPUT TYPE="RADIO" NAME="q9" onClick="saver(9,4)" >on top the remains of your feast<br> 
+<INPUT TYPE="RADIO" NAME="q9" onClick="saver(9,1)" >patiently, knowing one day, the terrors of the void will consume the world<br> 
+</span><br> <br>
+
+<span class="style3"><br>10. You often dream that you are</span><br> <br>
+<span class="style6"> 
+<INPUT TYPE="RADIO" NAME="q10" onClick="saver(10,3)" >running around, spitting and exploding everywhere<br> 
+<INPUT TYPE="RADIO" NAME="q10" onClick="saver(10,4)" >growing bigger and bigger<br> 
+<INPUT TYPE="RADIO" NAME="q10" onClick="saver(10,2)" >searching for something or somebody<br> 
+<INPUT TYPE="RADIO" NAME="q10" onClick="saver(10,6)" >flying or floating<br> 
+<INPUT TYPE="RADIO" NAME="q10" onClick="saver(10,1)" >you never sleep<br> 
+<INPUT TYPE="RADIO" NAME="q10" onClick="saver(10,5)" >frolicking with your best buddy.<br> 
+ </span><br> <br>
+
+<br> 
+
+<INPUT TYPE="button" NAME="result" Value="See Your Champion" onClick="total()"> 
+<span> 
+
+<!--<center><%= link_to image_tag("lolbutt.png", alt: "lols"), 'home' %></center>-->
+
+</FORM> 
+</BODY> 
+</HTML>  
+</div>
